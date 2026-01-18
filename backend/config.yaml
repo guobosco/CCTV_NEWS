@@ -20,7 +20,7 @@ spider:
 batch:
   python_path: "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"  # Python解释器路径
   main_script: "news_to_sqlite.py"  # 主爬虫脚本路径
-  default_start_date: "2022-01-01"  # 默认开始日期
+  default_start_date: "2026-01-01"  # 默认开始日期
 
 # 日志配置
 logging:
