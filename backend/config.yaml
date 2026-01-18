@@ -2,7 +2,7 @@
 backend:
   host: "0.0.0.0"          # 服务器IP，0.0.0.0表示监听所有网卡
   port: 5001                # 端口号
-  debug: true               # 调试模式
+  debug: false               # 调试模式
 
 # 数据库配置
 database:
@@ -10,7 +10,7 @@ database:
 
 # 爬虫配置
 spider:
-  backend_url: "http://localhost:5001"  # 后端服务URL
+  backend_url: "http://123.207.199.197:5001"  # 后端服务URL
   request_timeout: 10       # 请求超时时间（秒）
   max_retries: 5            # 最大重试次数
   request_delay: 1.0        # 请求延迟（秒）
@@ -18,7 +18,7 @@ spider:
 
 # 批量运行配置
 batch:
-  python_path: "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"  # Python解释器路径
+  python_path: "/var/www/cctv_news/venv/bin/python"  # Python解释器路径
   main_script: "news_to_sqlite.py"  # 主爬虫脚本路径
   default_start_date: "2026-01-01"  # 默认开始日期
 
