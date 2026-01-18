@@ -1,0 +1,14 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <view class="loading" wx:if="{{loading}}">加载中...</view>
+  <view class="news-detail" wx:else>
+    <view class="news-title">{{news.title}}</view>
+    <view class="news-date">日期：{{news.date}}</view>
+    
+    <!-- 单条新闻详细内容 -->
+    <view class="news-content">
+      <view class="content" wx:if="{{news.content}}">{{news.content}}</view>
+      <view class="no-content" wx:else>暂无该新闻的详细内容</view>
+    </view>
+  </view>
+</view>

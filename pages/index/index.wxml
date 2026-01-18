@@ -1,0 +1,45 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 日期选择器 -->
+  <view class="date-picker-container">
+    <picker 
+      mode="date" 
+      value="{{currentDate}}" 
+      start="{{earliestDate}}" 
+      end="{{today}}" 
+      bindchange="onDateChange"
+    >
+      <view class="picker">
+        {{currentDate}}
+      </view>
+    </picker>
+    
+    <!-- 前后一天切换按钮 -->
+    <view class="date-nav-buttons">
+      <button class="prev-btn" bindtap="goToPrevDay" disabled="{{currentDate === earliestDate}}">前一天</button>
+      <button class="next-btn" bindtap="goToNextDay" disabled="{{currentDate === today}}">后一天</button>
+    </view>
+  </view>
+  
+  <!-- 新闻标题列表 -->
+  <view class="loading" wx:if="{{loading}}">加载中...</view>
+  <view class="news-list" wx:else>
+    <view class="no-news" wx:if="{{newsItems.length === 0}}">
+      暂无该日期的新闻数据
+    </view>
+    <view class="news-items" wx:else>
+      <view 
+        class="news-item" 
+        wx:for="{{newsItems}}" 
+        wx:key="id"
+        bindtap="goToNewsDetail"
+        data-news-id="{{item.id}}"
+        data-news-title="{{item.title}}"
+        data-news-date="{{currentDate}}"
+      >
+        <view class="item-number">{{item.number}}</view>
+        <view class="item-title">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+</view>
