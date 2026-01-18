@@ -917,3 +917,5 @@ if __name__ == '__main__':
         port=config['backend']['port'],
         debug=config['backend']['debug']
     )
+# 添加WSGI入口，供Gunicorn使用
+wsgi_app = app
