@@ -45,7 +45,7 @@ class ScheduledSpider:
         self.db_path = os.path.join(self.script_dir, 'news.db')
         
         # Python解释器的完整路径，用于执行爬虫脚本
-        self.python_path = 'C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\python.exe'
+        self.python_path = config['batch']['python_path'] 
         
         # 记录初始化日志
         logger.info("=== 定时爬虫程序初始化 ===")
